@@ -1,0 +1,24 @@
+body {
+    padding: 0;
+}
+
+.header {
+    flex-direction: column;
+    margin-bottom: var(--spacing-base);
+}
+
+.header__logo {
+    height: 40px;
+    object-fit: contain;
+    margin: calc(var(--spacing-base) * 1.5) 0;
+}
+
+.nav__item {
+    flex-basis: 50%;
+    padding: 0 0 var(--spacing-base);
+}
+
+.nav__item--active:before {
+    top: unset;
+    bottom: 0;
+}
