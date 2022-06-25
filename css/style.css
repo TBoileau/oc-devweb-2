@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 :root {
-    --base-padding: 1rem;
+    --padding-base: 1rem;
+    --color-base: #464646;
+    --color-primary: #0065fc;
+    --font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -8,7 +13,9 @@
 
 body {
     width: 100%;
-    padding: 0 var(--base-padding);
+    padding: 0 var(--padding-base);
+    color: var(--color-base);
+    font-family: var(--font-family);
 }
 
 @media (min-width: 1400px) {
@@ -16,4 +23,50 @@ body {
         max-width: 1320px;
         margin: 0 auto;
     }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+header > img {
+    height: 50px;
+    margin: var(--padding-base) 0;
+}
+
+header > nav > ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+
+}
+
+header > nav > ul > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    padding: 0 calc(2 * var(--padding-base));
+}
+
+header > nav > ul > li.active:before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primary);
+}
+
+header > nav > ul > li > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header > nav > ul > li.active > a {
+    color: var(--color-primary);
 }
