@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --padding-base: 1rem;
+    --spacing-base: 1rem;
     --color-base: #464646;
     --color-primary: #0065fc;
     --font-family: 'Roboto', sans-serif;
@@ -13,9 +13,15 @@
 
 body {
     width: 100%;
-    padding: 0 var(--padding-base);
     color: var(--color-base);
     font-family: var(--font-family);
+    padding: 0 var(--spacing-base);
+}
+
+@media (max-width: 575.98px) {
+    body {
+        padding: 0;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -33,7 +39,8 @@ header {
 
 header > img {
     height: 50px;
-    margin: var(--padding-base) 0;
+    object-fit: contain;
+    margin: var(--spacing-base) 0;
 }
 
 header > nav > ul {
@@ -49,7 +56,7 @@ header > nav > ul > li {
     justify-content: center;
     height: 100%;
     position: relative;
-    padding: 0 calc(2 * var(--padding-base));
+    padding: 0 calc(2 * var(--spacing-base));
 }
 
 header > nav > ul > li.active:before {
@@ -69,4 +76,24 @@ header > nav > ul > li > a {
 
 header > nav > ul > li.active > a {
     color: var(--color-primary);
+}
+
+@media (max-width: 575.98px) {
+    header {
+        flex-direction: column;
+        margin-bottom: var(--spacing-base);
+    }
+
+    header > nav > ul > li {
+        flex-basis: 50%;
+    }
+
+    header > nav > ul > li {
+        padding: 0 0 var(--spacing-base);
+    }
+
+    header > nav > ul > li.active:before {
+        top: unset;
+        bottom: 0;
+    }
 }
