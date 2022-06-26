@@ -2,6 +2,10 @@ body {
     padding: 0;
 }
 
+main > section {
+    padding: var(--spacing-base);
+}
+
 .header {
     flex-direction: column;
     margin-bottom: var(--spacing-base);
@@ -21,4 +25,22 @@ body {
 .nav__item--active:before {
     top: unset;
     bottom: 0;
+}
+
+.form__submit {
+    border-radius: 1rem;
+    margin-left: -1rem;
+}
+
+.form__submit > span {
+    display: none;
+}
+
+.form__submit > .icon {
+    display: block;
+    fill: var(--color-white);
+}
+
+.form__legend {
+    width: 100%;
 }
